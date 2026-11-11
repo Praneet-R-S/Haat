@@ -171,7 +171,7 @@ export function ProductPage() {
             <p className="mt-3 text-ink-2 leading-relaxed">{s.bio}</p>
             {!!p.makers?.length && (
               <p className="mt-3 text-sm text-ink-2">
-                {p.makers.length} makers share each sale through PayPal Payouts: {p.makers.map((m) => m.name).join(', ')}.
+                {p.makers.length} makers share each sale (by UPI from the cooperative, or PayPal Payouts from an account outside India): {p.makers.map((m) => m.name).join(', ')}.
               </p>
             )}
           </div>

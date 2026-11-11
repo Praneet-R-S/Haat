@@ -209,7 +209,7 @@ export function HomePage() {
   const steps = [
     { to: '/seller/bagru-chhipa-prints', title: 'A maker speaks', body: 'A photo and a voice note in Hindi or Tamil become an English listing, priced so the rupees survive the trip, published to the PayPal Catalog.' },
     { to: '/agent', title: 'An agent buys', body: 'A buyer abroad, or their AI shopping agent, finds the piece. The agent works inside a spending limit and the human approves every payment in PayPal.' },
-    { to: '/ledger', title: 'The desk does the rest', body: 'GST export invoice under LUT, purpose code, tracking on the PayPal capture, and every maker paid their share through PayPal Payouts.' },
+    { to: '/ledger', title: 'The desk does the rest', body: 'GST export invoice under LUT, purpose code, tracking on the PayPal capture, and each maker’s share sent: by UPI from an Indian account, by PayPal Payouts from one outside India.' },
     { to: '/shop', title: 'Every dollar traced', body: 'Each order shows where the buyer’s money went: the fee, the shipping, and the rupees that reached each maker, by name.' },
   ];
   return (

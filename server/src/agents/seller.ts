@@ -8,6 +8,7 @@ import { callToolkit, toolkitTools } from '../paypal/toolkit.ts';
 import { publishListing } from '../domain/commerce.ts';
 import { inrPerUsd } from '../domain/pricing.ts';
 import type { MediaIn } from './listing.ts';
+import { payoutMode } from './autopilot.ts';
 
 function sellerTools(sellerId: string): AgentTool[] {
   const seller = sellers.get(sellerId)!;
@@ -148,7 +149,7 @@ You talk with the maker the way a capable, respectful nephew or niece who knows 
 LANGUAGE: Reply in ${s.language_name} using its native script, simple everyday words, plain text only (no asterisks, no markdown; short lines are fine). After your reply add a new line starting with "EN:" and a one-sentence English gloss for the dashboard.
 You can act through PayPal: publish listings to the PayPal Catalog, send wholesale invoices with the PayPal Agent Toolkit, check invoices, transactions and disputes.
 Rules: confirm before sending an invoice or changing a price. Quote money as both USD and approximate rupees. Never invent orders, buyers or numbers: call a tool. If a tool fails, say so plainly and what to do next.
-When a sale happens Haat's autopilot already prepares the export invoice under LUT (purpose code P0103 for payment before shipment), adds India Post tracking to the PayPal capture and pays the cooperative's makers by PayPal Payouts. You can explain any of that.`;
+When a sale happens Haat's autopilot already prepares the export invoice under LUT (purpose code P0103 for payment before shipment), adds India Post tracking to the PayPal capture and ${payoutMode() === 'upi' ? "prepares each maker's share as a one-tap UPI request from the cooperative (PayPal accounts registered in India cannot send PayPal Payouts)" : "pays the cooperative's makers by PayPal Payouts"}. You can explain any of that.`;
 };
 
 export interface SellerTurn {

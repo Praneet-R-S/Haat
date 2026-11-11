@@ -113,7 +113,7 @@ export function SellerDesk({ slug }: { slug: string }) {
               <p className="text-ink-3">{s.name} works alone, so sales are not split.</p>
             ) : (
               <>
-                <p className="text-ink-2 mb-3">After each sale, 70% of the item&rsquo;s net is paid out to the makers below through PayPal Payouts. The rest stays with the cooperative for yarn, dye and rent.</p>
+                <p className="text-ink-2 mb-3">After each sale, 70% of the item&rsquo;s net goes to the makers below: by UPI from the cooperative on an Indian PayPal account, or by PayPal Payouts from an account outside India. The rest stays with the cooperative for yarn, dye and rent.</p>
                 <table className="w-full">
                   <thead><tr className="text-left"><th className="label py-2">Maker</th><th className="label">Role</th><th className="label text-right">Share</th></tr></thead>
                   <tbody>
