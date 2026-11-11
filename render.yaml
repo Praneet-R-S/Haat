@@ -21,3 +21,6 @@ services:
         sync: false
       - key: PAYPAL_WEBHOOK_ID
         sync: false
+      # Our sandbox merchant is registered in India, so makers' shares go out by UPI (see README)
+      - key: PAYOUT_MODE
+        value: upi
