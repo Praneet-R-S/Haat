@@ -24,7 +24,7 @@ At the same time, buyers are starting to shop through AI agents. Those agents ca
 - **Server:** Node 24, Express 5, TypeScript, SQLite (`node:sqlite`), Server-Sent Events for live updates.
 - **PayPal:** a typed REST client with token caching, idempotency keys and a ledger hook; Orders v2 (create, capture, `/track`), JS SDK buttons, Catalog Products, Payouts (with a UPI split for Indian accounts, which cannot send payouts), Disputes (`provide-evidence` multipart, `accept-claim`), webhook registration and signature verification, and the **@paypal/agent-toolkit** tools (invoicing, transactions, insights, disputes). We wrote an adapter that converts the toolkit's Zod schemas into Gemini function declarations, so our Gemini agents call PayPal's own tool implementations.
 - **AI:** Google Gemini via `@google/genai`: multimodal structured output (photo + audio to listing), a tool-calling agent loop for the seller and buyer agents, a compliance step for the export paperwork, and dispute advice. Model fallback keeps a demo alive when one model is overloaded.
-- **Agentic commerce:** spending mandates enforced before PayPal is called, human approval on every purchase, and an MCP server (`@modelcontextprotocol/sdk`, Streamable HTTP) exposing search, details, checkout and order status.
+- **Agentic commerce, built for trust:** agents prepare and explain, PayPal and people move the money. Spending mandates are enforced before PayPal is ever called, every purchase ends in a human approval inside PayPal, every agent action and PayPal call is on an auditable ledger, and the listing agent is forbidden from claims the maker never made. The same tools are exposed through an MCP server (`@modelcontextprotocol/sdk`, Streamable HTTP) exposing search, details, checkout and order status.
 - **Frontend:** React 19, Vite, Tailwind CSS 4, with a design system built from the craft: paper and ink, natural indigo, madder and turmeric, Newsreader and IBM Plex (including Plex Devanagari for Hindi).
 
 ## Challenges we ran into
@@ -35,8 +35,9 @@ At the same time, buyers are starting to shop through AI agents. Those agents ca
 
 ## Accomplishments we're proud of
 
-- A Hindi voice note becomes a priced export listing in seconds, and the Live stage times the whole loop with a stopwatch: voice note to makers paid.
-- An AI shopping agent buys from a maker with no website, and the maker's own agent does the export paperwork and pays the cooperative, all through PayPal.
+- A Hindi voice note becomes a priced export listing in seconds, and the Live stage times the whole loop with a stopwatch: voice note to makers' split.
+- An AI shopping agent buys from a maker with no website, and the maker's own agent does the export paperwork and splits the money for the cooperative, with PayPal carrying the payment across the border.
+- We designed around a real constraint instead of hiding it: PayPal accounts registered in India receive from abroad but cannot send PayPal Payouts, so the makers' shares go out as UPI requests from the cooperative. With a marketplace account outside India, the same step uses PayPal Payouts (`PAYOUT_MODE=paypal`).
 - Every PayPal call is visible and auditable.
 
 ## What we learned
@@ -49,7 +50,7 @@ WhatsApp as the seller channel, real India Post DNK booking, e-FIRA matching fro
 
 ## Built with
 
-PayPal Orders v2, PayPal JS SDK, PayPal Catalog Products, PayPal Payouts, PayPal Invoicing, PayPal Disputes, PayPal Webhooks, PayPal Agent Toolkit, Model Context Protocol, Google Gemini, Node.js, Express, TypeScript, SQLite, React, Vite, Tailwind CSS.
+PayPal Orders v2, PayPal JS SDK, PayPal Catalog Products, PayPal Payouts, UPI deep links, PayPal Invoicing, PayPal Disputes, PayPal Webhooks, PayPal Agent Toolkit, Model Context Protocol, Google Gemini, Node.js, Express, TypeScript, SQLite, React, Vite, Tailwind CSS.
 
 ## AI tools statement
 
@@ -59,6 +60,26 @@ PayPal Orders v2, PayPal JS SDK, PayPal Catalog Products, PayPal Payouts, PayPal
 - **Claude (Anthropic) via Claude Code**: used by the team as a coding assistant during development.
 - Product photography is stock (Unsplash and Pexels licences, credits in `server/seed/images/CREDITS.md`); no AI-generated images are presented as real products.
 
+## What is real, and what is not
+
+We would rather you trust a smaller claim than doubt a bigger one.
+
+| | Status |
+|---|---|
+| Photo + Hindi voice note to listing (Gemini), spoken replies | Real, runs live |
+| Listing published to the PayPal Catalog | Real sandbox call |
+| Buyer agent creates a PayPal order inside a mandate; human approves in PayPal | Real sandbox calls |
+| Capture, export invoice, tracking on the capture, makers' split, Hindi sale voice note | Real sandbox calls (verified on: TODO date after the first full purchase) |
+| Wholesale invoice through the PayPal Agent Toolkit | Real sandbox calls |
+| MCP endpoint | Tested with the official MCP client (search, details, checkout, status) |
+| Makers' split | UPI requests (Indian account); sample UPI IDs on a demo handle that cannot receive money |
+| India Post booking | Simulated (tracking number format is real and is attached to the real PayPal capture) |
+| WhatsApp channel | Not built; the seller chat is a web chat shaped like the phone the maker already uses |
+| PayPal fee, GST on fee, conversion spread | Estimates, labelled in the UI; the fee on an order is the real one from the capture |
+| Makers and photos | Sample profiles; stock photography with credits |
+
 ## Testing instructions
 
-See the README section "Testing it (judges)". Sandbox buyer login: add before submitting.
+Try it in two minutes: open the app, go to **Live**, press **Send Rafiq's voice note**, tap **Publish** on the phone, press **Ask the buyer's agent**, approve in the PayPal popup with the sandbox buyer below, and watch the stopwatch. Full steps in the README section "Testing it (judges)".
+
+Sandbox buyer (US Personal sandbox account): TODO email / TODO password

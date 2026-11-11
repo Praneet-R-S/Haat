@@ -1,16 +1,23 @@
-# Demo video script (target 2:50, hard limit 3:00)
+# Demo video: one golden path (target 2:50, hard limit 3:00)
 
-Record at 1440x900 or 1920x1080. Before recording: open `/app/live` and press **Reset** (top right), keep the landing page `/` in another tab, and log out of sandbox.paypal.com so the approval popup is clean. Upload the sample voice note in advance as a fallback if the live microphone is unreliable.
+Show one complete sale, live, on `/app/live`, with the stopwatch running. Everything else gets ten seconds at the end.
+
+**Before each take**
+- Open `/app/live` and press **Reset** (top right). Keep the landing page `/` open in another tab.
+- Log out of sandbox.paypal.com so the approval popup is clean. Have the US sandbox buyer login ready.
+- Sound on: the Hindi voice note and the spoken replies are part of the story.
+- Phone pane: keep **EN on** so every Hindi message has its English line on screen. Also add subtitles in the edit for any Hindi audio.
+- Record at 1920x1080 with the browser zoomed so text is readable. If a Gemini call is slow, cut the wait in editing; never fake a result.
 
 | Time | Screen | Voice-over |
 |---|---|---|
-| 0:00 to 0:15 | Landing page hero, slow scroll | "Rafiq prints cloth by hand in Bagru, Rajasthan. Buyers in Brooklyn and Berlin want it. What stops the sale isn't the cloth. It's everything around the payment." |
-| 0:15 to 0:30 | Landing page, the pile of paperwork | "An English listing. An export price. A way to get paid. A GST export invoice, a purpose code, tracking, and splitting the money with the people who printed it. So we built him an export desk, run by agents and settled by PayPal." |
-| 0:30 to 1:00 | `/app/live`. Press **Send Rafiq's voice note**; the stopwatch starts. Tap **Publish** on the phone. Tap **सुनें** once to let the reply play aloud | "He sends a photo and a voice note in Hindi. One Gemini call listens and looks: it transcribes, translates, writes the listing, proposes the HS code and prices it for export, working back from the rupees he asked for through PayPal's fee, GST and conversion. He taps publish: that's a real PayPal Catalog call, on the ledger on the right." |
-| 1:00 to 1:35 | Press **Ask the buyer's agent** (middle pane) | "His next buyer might not be a person. This buyer wants indigo cloth for a summer dress, under forty-five dollars delivered. The agent searches, picks the cloth Rafiq just listed, and creates a real PayPal order. It can't pay. A human approves, in PayPal." Approve in the popup. |
-| 1:35 to 2:10 | Ledger rows stream in; the Hindi sale message lands on the phone, plays as a voice note, with the UPI split card under it; the stopwatch stops; the "Where the money went" sheet rises | "The moment PayPal captures, Rafiq's desk takes over. It reads the fee and seller protection, writes the GST export invoice under LUT with purpose code P0103, attaches India Post tracking to the capture, and splits the money between the three printers: PayPal brought the dollars into India, and each share goes out by UPI with one tap. Then it tells Rafiq, in Hindi, out loud. And here is every dollar of that payment, traced to the three people who printed the cloth." |
-| 2:10 to 2:30 | Seller chat: type or say the wholesale invoice request | "He can talk to it too. 'Send the Berlin shop an invoice for twenty.' The agent confirms, then sends a PayPal invoice through PayPal's own Agent Toolkit." |
-| 2:30 to 2:45 | Ledger page, MCP tab, the export invoice PDF | "Every call is on the ledger with its debug id. Outside agents can shop Haat over MCP. Disputes get evidence from the tracking it already attached." |
-| 2:45 to 2:55 | Landing page close | "Haat. The export desk India's makers never had. Built on PayPal." |
+| 0:00 to 0:12 | Landing page hero, slow scroll | "Rafiq prints cloth by hand in Bagru, Rajasthan. Buyers abroad want it. What stops the sale isn't the cloth. It's everything around the payment." |
+| 0:12 to 0:25 | Landing page: the paperwork pile | "An English listing, an export price, a way to get paid, a GST export invoice, a purpose code, tracking, and splitting the money with the people who printed it. So we built him an export desk, run by agents and settled by PayPal." |
+| 0:25 to 0:55 | `/app/live`: press **Send Rafiq's voice note** (stopwatch starts). Transcript appears, then the listing. Tap **सुनें** for two seconds. Tap **Publish**; the Catalog row lands on the ledger | "He sends a photo and a voice note in Hindi. Gemini hears it, writes the listing in English, finds the customs code and prices it so his rupees survive PayPal's fee, GST and conversion. It answers him in Hindi, out loud. One tap, and it's live in the PayPal Catalog." |
+| 0:55 to 1:30 | Press **Ask the buyer's agent**. Tool chips, results, the approval card; `POST /v2/checkout/orders` on the ledger. Approve in the PayPal popup | "His next buyer might not be a person. This shopping agent finds the cloth and creates a real PayPal order inside the buyer's budget. But it cannot pay. Trust stays with the human, who approves in PayPal." |
+| 1:30 to 2:10 | Capture row on the ledger; five autopilot steps go green; the Hindi sale message arrives on the phone and plays as a voice note; the UPI split card; stopwatch stops; the **Where the money went** sheet rises | "The moment PayPal captures, Rafiq's desk takes over: the export invoice under LUT with purpose code P0103, India Post tracking on the PayPal capture for seller protection, and each printer's share. Then it tells Rafiq, in Hindi. And here is every dollar of that payment, traced to the three people who made the cloth." |
+| 2:10 to 2:25 | Open the export invoice; then the UPI split card | "A design decision worth saying out loud: PayPal accounts registered in India can receive from abroad but cannot send PayPal Payouts. So PayPal brings the dollars in, and UPI carries each maker's share the last mile." |
+| 2:25 to 2:40 | Ten-second montage, captioned "Also built": MCP connection details, a wholesale invoice sent by chat through the Agent Toolkit, the dispute desk | "Also built: outside AI agents can shop Haat over MCP, wholesale invoices go out through PayPal's Agent Toolkit, and a dispute desk drafts evidence from the tracking it already attached." |
+| 2:40 to 2:50 | Stopwatch close-up, then the landing page close | "From a voice note in Bagru to a paid, documented, split sale abroad, in [read the real time off the stopwatch]. Haat." |
 
-Shots to capture as B-roll in case a live call is slow: the draft card appearing, the PayPal popup, the five autopilot steps, the ledger scrolling, the export invoice.
+Only show a feature in the montage if it was tested for real. The MCP endpoint is tested with the official MCP client (`server/scripts/mcp-check.ts`); show a Claude Desktop shot only if it was connected to the deployed URL.

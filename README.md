@@ -103,6 +103,14 @@ Open http://localhost:8787. The sample makers and catalogue load on first boot a
 
 For frontend work: `npm run dev` (API on 8787) and `npm run dev:web` (Vite on 5173, proxied).
 
+## Try it in two minutes
+
+1. Open the app at `/app/live` (or the deployed URL plus `/app/live`).
+2. Press **Send Rafiq's voice note**. You don't need a microphone: it sends a sample photo and a 25-second Hindi voice note (download them: [photo](server/seed/images/studio-raw-photo.jpg), [voice note](server/seed/images/sample-voice-hi.wav)). Every Hindi message shows its English underneath.
+3. Tap **Publish** on the phone, then press **Ask the buyer's agent**.
+4. Approve the payment in the PayPal popup with the sandbox buyer below.
+5. Watch the stopwatch stop and the "Where the money went" sheet rise.
+
 ## Testing it (judges)
 
 1. Open `/app/live` and press **Send Rafiq's voice note** (top right). The stopwatch starts.

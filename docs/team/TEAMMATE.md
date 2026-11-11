@@ -18,13 +18,14 @@ You own getting Haat **deployed, tested, filmed and submitted**. Praneet owns th
 - Put the sandbox buyer email and password in the README line that says "add the sandbox personal account email and password here". (Sandbox test logins are meant to be shared with judges; real logins never are.)
 - If anything fails, write the exact error and the ledger row (with its debug_id) in `docs/submission/QA_REPORT.md` and tell Praneet.
 
-## Task 2: deploy (45 min). File: `docs/submission/DEPLOYMENT.md`
+## Task 2: deploy (45 min, do it early: webhooks and judges need it). File: `docs/submission/DEPLOYMENT.md`
 
 - Render (we have `render.yaml`): New > Blueprint > pick the GitHub repo. Set env vars: `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `GEMINI_API_KEY`, `PAYOUT_MODE=upi`, and `PUBLIC_URL` = the https URL Render gives you. Redeploy after setting `PUBLIC_URL`.
 - On first boot the logs print `PayPal webhook registered: <id>`. Add that as `PAYPAL_WEBHOOK_ID` and redeploy, so webhook signatures are verified.
 - The free plan sleeps and its disk is wiped on redeploy. That's fine (the demo reseeds itself), but open the URL a minute before judging or recording.
 - Run the Task 1 purchase again on the deployed URL. Record the URL and what you tested in `DEPLOYMENT.md`.
-- Judges have until 15 Dec, so keep the deployment up until then.
+- Judges have until 15 Dec, so keep the deployment up until then. The free plan sleeps after ~15 minutes idle and takes ~1 minute to wake; Render Starter (paid) does not sleep. Decide with Praneet.
+- Test MCP from Claude Desktop against the deployed URL: Settings > Connectors > Add custom connector > `https://<deployed>/mcp`, then ask Claude to find indigo cloth from Bagru and start a checkout. Note the result in QA_REPORT.md. Locally, `cd server && CHECKOUT=1 npx tsx scripts/mcp-check.ts https://<deployed>/mcp` checks the same thing.
 
 ## Task 3: QA pass (45 min). File: `docs/submission/QA_REPORT.md`
 
@@ -36,7 +37,7 @@ Walk the checklist in that file on desktop Chrome, one other browser, and a real
 
 ## Task 5: the video (2 hours, the most important task). File: `docs/submission/VIDEO.md`
 
-- Follow `docs/DEMO_SCRIPT.md` exactly. **Under 3:00** is a hard rule. Record at 1920x1080, with the browser zoomed so text is readable.
+- Follow `docs/DEMO_SCRIPT.md` exactly: one golden path, one real sale, stopwatch running. **Under 3:00** is a hard rule. Record at 1920x1080, with the browser zoomed so text is readable.
 - Press **Reset** on `/app/live` before each take. Turn sound on: the Hindi voice note and the spoken replies are part of the story.
 - Voice-over: calm, plain English. No background music unless it's royalty-free with a licence you can show.
 - Show it working for real: the PayPal popup approval and the ledger rows are proof. If a Gemini call is slow, cut the wait in editing; never fake a result.
