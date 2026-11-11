@@ -341,10 +341,11 @@ export const products = {
     if (!terms.length) return live;
     // Title and tags count more than the story, so "indigo block print" finds the indigo piece first.
     const scored = live.map((p) => {
-      const title = (p.title + ' ' + p.subtitle).toLowerCase();
+      const title = p.title.toLowerCase();
+      const sub = p.subtitle.toLowerCase();
       const tags = [p.category, ...p.materials, ...p.tags].join(' ').toLowerCase();
       const story = p.story.toLowerCase();
-      const score = terms.reduce((s, t) => s + (title.includes(t) ? 3 : 0) + (tags.includes(t) ? 2 : 0) + (story.includes(t) ? 1 : 0), 0);
+      const score = terms.reduce((s, t) => s + (title.includes(t) ? 3 : 0) + (sub.includes(t) ? 1 : 0) + (tags.includes(t) ? 2 : 0) + (story.includes(t) ? 1 : 0), 0);
       return { p, score };
     });
     const hits = scored.filter((s) => s.score > 0).sort((a, b) => b.score - a.score).map((s) => s.p);
