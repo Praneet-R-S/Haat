@@ -1,6 +1,13 @@
-# Teammate brief: the Ship lane
+# Teammate brief: you own the finish
 
-You own getting Haat **deployed, tested, filmed and submitted**. Praneet owns the product code. Work through the tasks below in order with your Claude. Each task names the file you fill in; those files already exist as templates.
+You own getting Haat **proven, deployed, filmed and submitted**. Praneet is out of Claude time, so you may also fix product code (`server/`, `web/`) when a real test fails. Keep fixes small and commit them separately.
+
+## Status at handover (12 Nov)
+
+- Proven with real sandbox calls: voice note to listing, spoken Hindi replies, publish to PayPal Catalog, buyer agent creating a real PayPal order, Agent Toolkit invoices, MCP endpoint (official MCP client).
+- **Not yet proven: a buyer approving a payment, then capture and everything after it** (export invoice, tracking on the capture, UPI split, Hindi sale voice note, money-flow sheet). This is the most important thing left.
+- Why the buyer must be outside India: our seller (PayPal merchant) is Indian, and PayPal India only takes payments from abroad (domestic Indian PayPal payments ended in 2021). So the test buyer plays the customer abroad. US, UK or any non-Indian country works.
+- Not pushed to GitHub, not deployed. Work through the tasks below in order with your Claude. Each task names the file you fill in; those files already exist as templates.
 
 ## Before you start (10 minutes)
 
@@ -11,12 +18,27 @@ You own getting Haat **deployed, tested, filmed and submitted**. Praneet owns th
 
 > Read CLAUDE.md and docs/team/TEAMMATE.md. I am the teammate in the Ship lane. Only edit the paths my lane owns. Start with task 1 and check each one off in docs/submission/SUBMISSION_CHECKLIST.md as we finish it.
 
-## Task 1: sandbox buyer account (15 min). File: `README.md` (Testing section only)
+## Task 0: get the code (Praneet does this first)
+
+Praneet: create an empty **public** GitHub repo (no README, no licence), then in the project folder:
+
+```bash
+git remote add origin https://github.com/<you>/<repo>.git
+```
+
+```bash
+git push -u origin main
+```
+
+Add the teammate as a collaborator and send them the PayPal sandbox Client ID and Secret privately. Also tick **Transaction search** on the sandbox app (developer.paypal.com > Apps & Credentials > the app > Features).
+
+## Task 1: the first real purchase (most important, do it first). File: `README.md` (Testing section) and `docs/DEVPOST.md` (status table)
 
 - On developer.paypal.com > Testing Tools > Sandbox Accounts, create a **Personal** account with country **United States**. Our merchant account is Indian and cannot take a domestic Indian payment, so the buyer must be outside India.
 - Do one full purchase on `/app/live`: send voice note > Publish > Ask the buyer's agent > approve in the PayPal popup with that US account. Confirm the five autopilot steps go green, Rafiq's phone gets a Hindi sale message plus the UPI split card, and the "Where the money went" sheet appears.
 - Put the sandbox buyer email and password in the README line that says "add the sandbox personal account email and password here". (Sandbox test logins are meant to be shared with judges; real logins never are.)
-- If anything fails, write the exact error and the ledger row (with its debug_id) in `docs/submission/QA_REPORT.md` and tell Praneet.
+- If anything fails, give Claude the exact error and the ledger row (with its debug_id) and fix it. Likely spots: the capture response for an Indian merchant, and the tracking call (`server/src/paypal/api.ts` addTracking falls back to carrier OTHER).
+- Repeat the purchase three times. When it works, replace "TODO date" in the `docs/DEVPOST.md` status table with the real date, and fill the sandbox buyer login there too.
 
 ## Task 2: deploy (45 min, do it early: webhooks and judges need it). File: `docs/submission/DEPLOYMENT.md`
 

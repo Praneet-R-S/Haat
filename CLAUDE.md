@@ -4,7 +4,11 @@ Haat is our entry for the **PayPal AI Hackathon 2026** (Devpost). Hard deadline:
 
 An export desk run by AI agents for India's small makers. A maker sends a photo and a Hindi/Tamil voice note; Gemini writes an English export listing; buyers abroad (or their AI shopping agents) pay with PayPal; after capture an autopilot writes the GST export invoice, adds tracking to the capture, splits the money between the cooperative's makers and tells the maker in their language. Read `README.md` for the full picture.
 
-## Two people, two lanes
+## Handover (12 Nov): the teammate now owns everything
+
+Praneet has run out of Claude time. The teammate now owns all remaining work, including product code (`server/`, `web/`). Start with `docs/team/TEAMMATE.md`. The lanes below still describe who wrote what; ask Praneet before large changes to the core flow.
+
+## Two people, two lanes (original split)
 
 | Lane | Owner | Paths you may edit |
 |---|---|---|
