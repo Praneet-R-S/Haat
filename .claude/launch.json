@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "haat",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start", "--workspace", "server"],
+      "port": 8787
+    },
+    {
+      "name": "haat-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--workspace", "web"],
+      "port": 5173
+    }
+  ]
+}

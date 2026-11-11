@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haat. An export desk for India's small makers</title>
+<meta name="description" content="Haat is an export desk run by AI agents for India's weavers, block printers and potters. A photo and a voice note become an export listing, a PayPal payment, the paperwork, the parcel and every maker's share.">
+<meta name="theme-color" content="#f3eee4">
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!window.matchMedia || !matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion');
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Devanagari:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap">
+<link rel="preload" as="image" href="img/hero-artisan.jpg">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f3eee4'/%3E%3Ctext x='10' y='47' font-family='Georgia,serif' font-size='42' fill='%231b1814'%3EH%3C/text%3E%3Ccircle cx='50' cy='44' r='5' fill='%23c8902e'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="runhead">
+  <a class="wordmark" href="#top" aria-label="Haat, back to top">Haat<span class="dot">.</span></a>
+  <p class="runhead__mid">An export desk for India's small makers</p>
+  <a class="runhead__door" href="/app/live">Open the live desk</a>
+</header>
+
+<main id="main">
+
+<!-- ACT 1. Recognition. Layered plate. -->
+<section class="hero" id="top" data-act="hero" aria-labelledby="hero-title">
+  <div class="hero__stage">
+    <div class="plane plane--bg" data-plane="bg" aria-hidden="true">
+      <img src="img/bagru-dupatta.jpg" alt="" width="1100" height="1466" decoding="async">
+    </div>
+    <figure class="plane plane--subject" data-plane="subject">
+      <div class="arch">
+        <img src="img/hero-artisan.jpg" alt="A weaver smiles at his handloom, a length of white cloth with blue motifs on the loom in front of him." width="1600" height="900" fetchpriority="high">
+      </div>
+    </figure>
+    <div class="hero__copy" data-plane="copy">
+      <h1 id="hero-title" class="hero__title">
+        <span class="line">Made by hand.</span>
+        <span class="line">Sold abroad.</span>
+        <span class="line line--em"><em>The rest is paperwork.</em></span>
+      </h1>
+      <p class="hero__lede">Haat is an export desk run by AI agents for India's weavers, block printers and potters. A maker sends a photo and a voice note in Hindi or Tamil. The agents write the listing, price it, take the payment through PayPal, do the export paperwork, ship it and pay every maker their share.</p>
+    </div>
+    <div class="plane plane--fore" data-plane="fore" aria-hidden="true">
+      <img src="img/block-stamp.jpg" alt="" width="1500" height="1002" decoding="async">
+    </div>
+    <div class="plane plane--air" data-plane="air" aria-hidden="true">
+      <img src="img/chanderi-stole.jpg" alt="" width="1200" height="800" decoding="async">
+    </div>
+    <p class="caption hero__caption">Plate I. A weaver at his loom; carved printing blocks; indigo block print. Stock photographs, credited in the colophon.</p>
+  </div>
+</section>
+
+<!-- ACT 2. Tension. The pile. -->
+<section class="pile" data-act="pile" aria-labelledby="pile-title">
+  <div class="pile__stage">
+    <div class="pile__text">
+      <h2 id="pile-title" class="h2">Between Rafiq's cloth and a buyer in Ohio.</h2>
+      <p class="body">Rafiq Chhipa prints dabu cloth in Bagru, Rajasthan, for Bagru Chhipa Prints (a sample maker profile on Haat). Six pieces are ready to sell. This is what stands in the way.</p>
+      <p class="pile__last" data-pile-last>None of it is about the cloth.</p>
+    </div>
+    <div class="pile__desk">
+      <figure class="pile__cloth" data-pile-cloth>
+        <img src="img/studio-raw-photo.jpg" alt="Indigo and white block printed cotton laid flat, photographed from above." width="900" height="1200" loading="lazy" decoding="async">
+      </figure>
+      <ol class="slips">
+        <li class="slip" style="--x:2%;--y:4%;--r:-5deg" data-r="-5"><span class="slip__k">Required</span><b>A listing in English</b><span>Written for someone who has never heard the word dabu.</span></li>
+        <li class="slip" style="--x:46%;--y:12%;--r:4deg" data-r="4"><span class="slip__k">Required</span><b>An export price</b><span>In dollars, after PayPal's fee, GST on that fee and the conversion spread.</span></li>
+        <li class="slip" style="--x:8%;--y:28%;--r:2deg" data-r="2"><span class="slip__k">Required</span><b>A way to get paid</b><span>From a card in Ohio to a bank account in Rajasthan.</span></li>
+        <li class="slip slip--ruled" style="--x:36%;--y:41%;--r:-3deg" data-r="-3"><span class="slip__k">Form</span><b>A GST export invoice</b><span>Under LUT, with the HS code on it.</span></li>
+        <li class="slip" style="--x:0%;--y:55%;--r:6deg" data-r="6"><span class="slip__k">Code</span><b>An RBI purpose code</b><span>P0103: payment received before shipment.</span></li>
+        <li class="slip slip--ruled" style="--x:44%;--y:63%;--r:-5deg" data-r="-6"><span class="slip__k">Proof</span><b>A tracking number</b><span>On the PayPal payment, for seller protection.</span></li>
+        <li class="slip slip--madder" style="--x:6%;--y:79%;--r:-1deg" data-r="-1"><span class="slip__k">Owed</span><b>Every maker's share</b><span>The cooperative splits the money. Someone has to send it.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 3. The peak. The voice note. -->
+<section class="note" data-act="note" aria-labelledby="note-title">
+  <div class="note__stage">
+    <div class="note__flood" aria-hidden="true"></div>
+    <h2 id="note-title" class="note__hush" data-hush>So he sends a voice note.</h2>
+    <p class="note__hush note__hush--lit" data-hush-lit aria-hidden="true">So he sends a voice note.</p>
+
+    <div class="note__grid">
+      <div class="note__thread">
+        <p class="thread__who">Rafiq <span>Bagru Chhipa Prints</span></p>
+        <figure class="bubble bubble--photo">
+          <img src="img/studio-raw-photo.jpg" alt="The photo he sends: the indigo and white block print, taken on a phone." width="900" height="1200" loading="lazy" decoding="async">
+        </figure>
+        <div class="bubble bubble--voice" data-voice>
+          <button class="play" type="button" data-play aria-pressed="false">
+            <svg class="play__i play__i--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+            <svg class="play__i play__i--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            <span class="sr" data-play-label>Play the voice note (Hindi, 25 seconds)</span>
+          </button>
+          <div class="wave" aria-hidden="true">
+            <div class="wave__bars wave__bars--dim" data-wave></div>
+            <div class="wave__bars wave__bars--lit" data-wave data-wave-lit></div>
+          </div>
+          <p class="voice__time"><span data-time>0:25</span><span class="voice__lang">Hindi</span></p>
+        </div>
+      </div>
+
+      <div class="note__words">
+        <div class="transcript" data-transcript>
+          <div class="sent" data-s="0" data-t="0.35 0.78"><p class="hi" lang="hi">नमस्ते।</p></div>
+          <div class="sent" data-s="1" data-t="0.8 2.35"><p class="hi" lang="hi">यह नया कपड़ा है बगरू का।</p><p class="en">This is a new cloth from Bagru.</p></div>
+          <div class="sent" data-s="2" data-t="2.6 6.0"><p class="hi" lang="hi">हाथ से ठप्पे से छापा हुआ।</p><p class="en">Printed by hand using wooden blocks.</p></div>
+          <div class="sent" data-s="3" data-t="6.45 8.0"><p class="hi" lang="hi">नील और सफेद रंग।</p><p class="en">Indigo blue and white colours.</p></div>
+          <div class="sent" data-s="4" data-t="8.3 15.05"><p class="hi" lang="hi">सूती है, ढाई मीटर लंबा, एक मीटर चौड़ा।</p><p class="en">It is cotton, 2.5 metres long and 1 metre wide.</p></div>
+          <div class="sent" data-s="5" data-t="15.7 20.7"><p class="hi" lang="hi">एक पीस के मुझे 1200 रुपये चाहिए।</p><p class="en">I want 1,200 rupees per piece.</p></div>
+          <div class="sent" data-s="6" data-t="21.6 24.9"><p class="hi" lang="hi">अभी छह पीस तैयार हैं।</p><p class="en">Right now 6 pieces are ready.</p></div>
+        </div>
+
+        <div class="price" data-price>
+          <h3 class="price__h">Priced so his rupees survive the trip.</h3>
+          <dl class="ledger">
+            <div class="ledger__row" data-row><dt>He asks, per piece</dt><dd>₹1,200</dd></div>
+            <div class="ledger__row" data-row><dt>Margin kept after fees</dt><dd>25%</dd></div>
+            <div class="ledger__row" data-row><dt>PayPal fee (estimate)</dt><dd>4.4% + $0.30</dd></div>
+            <div class="ledger__row" data-row><dt>GST on that fee</dt><dd>counted</dd></div>
+            <div class="ledger__row" data-row><dt>Conversion spread</dt><dd>about 3.5%</dd></div>
+            <div class="ledger__row ledger__row--total" data-row><dt>Listed at</dt><dd>$19.99 + shipping</dd></div>
+          </dl>
+          <p class="price__note" data-row>Worked backwards from what he asked, so he receives more than the ₹1,200 he asked for.</p>
+        </div>
+      </div>
+
+      <article class="listing" aria-label="The listing the agent writes">
+        <p class="listing__by">Listing agent <span>Google Gemini, from the photo and the note</span></p>
+        <div class="listing__img"><img src="img/studio-raw-photo.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async"></div>
+        <h3 class="listing__title">
+          <span class="fill" data-fill="3">Dabu Indigo</span>
+          <span class="fill" data-fill="2">Block Printed</span>
+          <span class="fill" data-fill="4">Cotton Fabric</span>
+        </h3>
+        <p class="listing__sub fill" data-fill="1">Dabu mud-resist block print, Bagru, Rajasthan</p>
+        <dl class="listing__facts">
+          <div><dt>Size</dt><dd><span class="fill" data-fill="4">2.5 m × 1 m</span></dd></div>
+          <div><dt>In stock</dt><dd><span class="fill" data-fill="6">6</span></dd></div>
+          <div class="wide"><dt>HS code</dt><dd><span class="fill" data-fill="4"><b class="mono">5208.52</b> Woven fabric of cotton, 85% or more cotton, printed</span></dd></div>
+          <div class="wide listing__pricebox"><dt>Price</dt><dd><span class="fill" data-fill="5"><span class="asked">₹1,200 asked</span></span> <span class="fill fill--price" data-fill="7">$19.99 <small>+ shipping</small></span></dd></div>
+        </dl>
+        <p class="stamp" data-stamp><b>Published</b><span>Haat shop and PayPal Catalog</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 4. The autopilot. Ledger folios, panned. -->
+<section class="desk" data-act="desk" aria-labelledby="desk-title">
+  <div class="desk__stage">
+    <div class="desk__track" data-track>
+      <div class="folio folio--intro">
+        <h2 id="desk-title" class="h2">Then a buyer in Ohio pays. The desk keeps working.</h2>
+        <p class="body">The moment PayPal captures the payment, the seller's autopilot runs five steps. Every PayPal call it makes is written to the ledger as it happens, with PayPal's debug id beside it.</p>
+      </div>
+
+      <article class="folio" data-folio>
+        <p class="folio__no">i.</p>
+        <h3 class="folio__h">Read what PayPal settled.</h3>
+        <ul class="entries">
+          <li><code>POST /v2/checkout/orders/{id}/capture</code><span>the capture itself</span></li>
+          <li><code>gross_amount</code><span>what the buyer paid</span></li>
+          <li><code>paypal_fee</code><span>the fee PayPal actually took</span></li>
+          <li><code>net_amount</code><span>what reaches the seller</span></li>
+          <li><code>seller_protection.status</code><span>covered, or not yet</span></li>
+        </ul>
+        <p class="folio__p">No more estimates. The fee and the net, exactly as PayPal settled them.</p>
+      </article>
+
+      <article class="folio" data-folio>
+        <p class="folio__no">ii.</p>
+        <h3 class="folio__h">Write the export invoice.</h3>
+        <ul class="entries">
+          <li><code>GST export invoice</code><span>under LUT, so no IGST is charged</span></li>
+          <li><code>purpose code P0103</code><span>RBI code for payment before shipment</span></li>
+          <li><code>HS 5208.52</code><span>woven cotton fabric, printed</span></li>
+        </ul>
+        <p class="folio__p">The papers a small exporter has to keep, written from the order itself.</p>
+      </article>
+
+      <article class="folio folio--parcel" data-folio>
+        <p class="folio__no">iii.</p>
+        <h3 class="folio__h">Book the parcel. Tell PayPal.</h3>
+        <figure class="folio__img"><img src="img/parcel.jpg" alt="A kraft paper parcel tied with white string and a red wax seal." width="900" height="1350" loading="lazy" decoding="async"></figure>
+        <ul class="entries">
+          <li><code>India Post EMS</code><span>the booking is simulated in the sandbox</span></li>
+          <li><code>POST /v2/checkout/orders/{id}/track</code><span>tracking attached to the capture</span></li>
+        </ul>
+        <p class="folio__p">Tracking on the capture is what keeps the sale under seller protection.</p>
+      </article>
+
+      <article class="folio" data-folio>
+        <p class="folio__no">iv.</p>
+        <h3 class="folio__h">Pay every maker their share.</h3>
+        <ul class="entries">
+          <li><code>POST /v1/payments/payouts</code><span>one item per maker, from a marketplace account outside India</span></li>
+          <li><code>upi://pay</code><span>or, from an Indian account, one UPI request per maker</span></li>
+        </ul>
+        <p class="folio__p">The cooperative's split. PayPal brings the dollars into India; each maker's share goes out by PayPal Payouts or, from an Indian account, by UPI.</p>
+      </article>
+
+      <article class="folio" data-folio>
+        <p class="folio__no">v.</p>
+        <h3 class="folio__h">Tell him, in his own language.</h3>
+        <ul class="entries">
+          <li><code>message to the seller</code><span>in Hindi, like the voice note</span></li>
+        </ul>
+        <p class="folio__p">He asked in Hindi, so he hears back in Hindi. A Tamil weaver hears back in Tamil.</p>
+      </article>
+
+      <article class="folio folio--madder" data-folio>
+        <p class="folio__no">And if a buyer disputes.</p>
+        <h3 class="folio__h">The dispute desk drafts the evidence.</h3>
+        <ul class="entries">
+          <li><code>POST /v1/customer/disputes/{id}/provide-evidence</code><span>send the case it prepared</span></li>
+          <li><code>POST /v1/customer/disputes/{id}/accept-claim</code><span>or concede, if that is fair</span></li>
+          <li><code>POST /v1/notifications/verify-webhook-signature</code><span>no webhook is believed unchecked</span></li>
+        </ul>
+        <p class="folio__p">It reads the claim and prepares the case. The seller decides which to send.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 5. Agents as buyers. Split layout with a chat. -->
+<section class="agents" aria-labelledby="agents-title">
+  <div class="agents__chat" data-chat>
+    <p class="chat__mandate"><span>Spending mandate</span> up to $40 landed, ships to the United States</p>
+    <ol class="chat">
+      <li class="msg msg--human">I'd like hand block printed indigo cotton for a tablecloth.</li>
+      <li class="msg msg--tool"><code>search_catalog</code> indigo block print cotton</li>
+      <li class="msg msg--result">
+        <img src="img/studio-raw-photo.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+        <span><b>Dabu Indigo Block Printed Cotton Fabric</b><span>Bagru Chhipa Prints. 2.5 m × 1 m. 6 in stock.</span><span class="mono">$19.99 + shipping</span></span>
+      </li>
+      <li class="msg msg--agent">This one is hand block printed in Bagru, and the landed cost fits your mandate. I've prepared the PayPal order. It only goes through if you approve it.</li>
+      <li class="msg msg--tool"><code>request_checkout</code> PayPal order created, waiting for the buyer</li>
+      <li class="msg msg--approve"><span class="approve">Approve in PayPal</span><span class="approve__note">The person approves. The agent cannot.</span></li>
+    </ol>
+    <p class="caption">An illustrative conversation. The agent, its tools and the PayPal order are real; the mandate values here are an example.</p>
+  </div>
+  <div class="agents__text">
+    <h2 id="agents-title" class="h2">His next buyer might not be a person.</h2>
+    <p class="body">A shopper can hand the search to Haat's buyer agent with a spending mandate: a ceiling on the landed price and a country to ship to. The agent searches, checks the landed cost and prepares a real PayPal order. It cannot pay. The human approves in PayPal, or nothing happens.</p>
+    <p class="body">Haat is also an MCP server, so outside agents such as Claude or ChatGPT can shop it with the same tools.</p>
+    <pre class="mcp" aria-label="MCP tools"><span class="mcp__c">POST /mcp  (Streamable HTTP)</span>
+search_catalog
+product_details
+request_checkout
+order_status</pre>
+  </div>
+</section>
+
+<!-- ACT 6. Close. Holds. -->
+<section class="close" aria-labelledby="close-title">
+  <figure class="close__plate">
+    <img src="img/hero-market.jpg" alt="A fabric stall at a market, scarves and striped cloth hung from the roof and stacked on the shelves." width="1600" height="1067" loading="lazy" decoding="async">
+    <figcaption class="caption">Plate II. A fabric stall. Stock photograph.</figcaption>
+  </figure>
+  <div class="close__text">
+    <h2 id="close-title" class="close__h">A haat is a village market. <em>This one ships abroad.</em></h2>
+    <p class="body">Watch the agents work on the live desk, with every PayPal call on the ledger. Or open the seller studio and send it a photo and a voice note yourself.</p>
+    <div class="doors">
+      <a class="door door--primary" href="/app/live">Open the live desk</a>
+      <a class="door" href="/app/seller/bagru-chhipa-prints">Try the seller studio</a>
+    </div>
+    <p class="also">Also: <a href="/app/shop">the shop</a>, <a href="/app/ledger">the ledger</a>.</p>
+  </div>
+
+  <footer class="colophon">
+    <p class="wordmark wordmark--big" aria-hidden="true">Haat<span class="dot">.</span></p>
+    <div class="colophon__cols">
+      <p><b>PayPal, in the sandbox.</b> Orders v2, JS SDK buttons, Catalog Products, Order tracking, Payouts, Invoicing and Transaction search through the PayPal Agent Toolkit, Disputes (provide evidence, accept claim), and Webhooks with signature verification.</p>
+      <p><b>Agents.</b> The listing agent is Google Gemini, reading the photo and the voice note together. Buyer agent and MCP server share the same four tools.</p>
+      <p><b>Colophon.</b> Set in Newsreader, IBM Plex Sans, IBM Plex Sans Devanagari and IBM Plex Mono. Photographs are stock, not of the makers named here: <a href="CREDITS.html">photo credits</a>.</p>
+    </div>
+    <p class="colophon__end">Built for the PayPal AI Hackathon 2026. Sandbox only; sample maker profiles.</p>
+  </footer>
+</section>
+
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>
