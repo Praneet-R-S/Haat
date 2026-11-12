@@ -55,9 +55,9 @@ PayPal Orders v2, PayPal JS SDK, PayPal Catalog Products, PayPal Payouts, UPI de
 ## AI tools statement
 
 - **Google Gemini API** (`gemini-3.5-flash` primary; `gemini-3.6-flash`, `gemini-3.8-flash`, `gemini-3.1-flash-lite` as automatic fallbacks): in the product, for multimodal listing generation from photos and voice notes, transcription and translation, the seller and buyer tool-calling agents, export-paperwork reasoning, maker notifications, and dispute advice.
-- **Gemini TTS** (`gemini-3.8-flash-tts`): speaks agent replies and sale updates to makers in their language, and generated the sample Hindi voice note used by the "Try it with a sample" button.
+- **Gemini TTS** (`gemini-3.8-flash-tts`): speaks agent replies and sale updates to makers in their language, generated the sample Hindi voice note used by the "Try it with a sample" button, and generated the English voice-over of our demo video (an AI voice, not a team member).
 - **PayPal Agent Toolkit**: PayPal's tool implementations used by the seller agent.
-- **Claude (Anthropic) via Claude Code**: used by the team as a coding assistant during development.
+- **Claude (Anthropic) via Claude Code**: used by the team as a coding assistant during development, and to run the QA pass, record and edit the demo video (scripted browser recording of the real app, waits shortened, no results faked) and prepare the submission.
 - Product photography is stock (Unsplash and Pexels licences, credits in `server/seed/images/CREDITS.md`); no AI-generated images are presented as real products.
 
 ## What is real, and what is not

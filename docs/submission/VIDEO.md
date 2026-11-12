@@ -2,15 +2,16 @@
 
 - Script: `docs/DEMO_SCRIPT.md` (hard limit 3:00)
 - YouTube link (Public): _TODO_
-- Length: _TODO_
-- Recorded on: _TODO_ (deployed URL or localhost)
-- Music: none / _TODO licence_
+- Length: 2:42
+- Recorded on: localhost, 12 Nov 2026, PayPal sandbox and Gemini live. A scripted Chrome run (Playwright) of the real app; Gemini and PayPal waits are sped up in the edit, nothing is faked. The stopwatch read 00:55 from voice note to makers' split.
+- Voice-over: AI voice (Gemini TTS), disclosed in the AI tools statement
+- Music: none
 
 ## Shot list
 - [ ] Landing page hero and paperwork pile (0:00 to 0:30)
 - [ ] Live stage: voice note, listing, Publish, spoken reply (0:30 to 1:00)
 - [ ] Buyer agent, approval in PayPal popup (1:00 to 1:35)
 - [ ] Autopilot, Hindi sale message with voice, UPI split, money flow sheet, stopwatch (1:35 to 2:10)
-- [ ] Wholesale invoice through the Agent Toolkit (2:10 to 2:30)
+- [ ] Wholesale invoice through the Agent Toolkit: left out (not re-tested through the chat in this build of the video)
 - [ ] Ledger, MCP, export invoice (2:30 to 2:45)
 - [ ] Close (2:45 to 2:55)
