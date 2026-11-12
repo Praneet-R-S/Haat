@@ -116,9 +116,9 @@ for (const shot of SHOTS) {
   const path = typeof shot.path === 'function' ? shot.path() : shot.path;
   try {
     // Not 'networkidle': the app keeps a Server-Sent Events stream open, so the network never goes idle.
-    await page.goto(BASE + path, { waitUntil: 'load', timeout: 45_000 });
+    await page.goto(BASE + path, { waitUntil: 'domcontentloaded', timeout: 45_000 });
     await page.evaluate(() => document.fonts?.ready);
-    await sleep(2500);
+    await sleep(3500);
     if (shot.prep) await shot.prep(page);
     await page.screenshot({ path: file });
     console.log(`saved ${file.replace(ROOT + '/', '')}`);

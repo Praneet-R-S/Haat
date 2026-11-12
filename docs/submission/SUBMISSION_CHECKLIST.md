@@ -4,7 +4,7 @@ Deadline: Thu 12 Nov 2026, 12:00 PT = Fri 13 Nov, 01:30 IST. Target: submitted b
 
 ## Accounts and access
 - [x] US sandbox Personal account created; login added to README "Testing it (judges)"
-- [x] Full purchase works locally with that account (Task 1): HT-01045 to HT-01047 on 12 Nov. Still to verify: the Hindi sale message (needs `GEMINI_API_KEY`)
+- [x] Full purchase works locally with that account (Task 1): HT-01045 to HT-01047 (shop) and HT-01048 (full `/app/live` run with the buyer agent and the Hindi sale message) on 12 Nov
 - [ ] Deployed URL works end to end (Task 2), URL in `DEPLOYMENT.md`
 - [ ] `PAYPAL_WEBHOOK_ID` set on the deployment
 

@@ -34,5 +34,8 @@ Scripted sweep in Chrome at 1440x900 and 375x812 of `/`, `/app`, `/app/live`, `/
 | HT-01045 | approval link (`/checkout/return`) | $46.47 | fee $2.49, eligible | EXP/2026/HT-01045 | 201 | 4 makers, ₹2,001 | needs Gemini key |
 | HT-01046 | approval link (`/checkout/return`) | $30.19 | fee $1.75, eligible | EXP/2026/HT-01046 | 201 | 3 makers, ₹1,000 | needs Gemini key |
 | HT-01047 | JS SDK button on the product page | $47.19 | fee $2.53, eligible | EXP/2026/HT-01047 | 201 | 3 makers, ₹1,145 | needs Gemini key |
+| HT-01048 | `/app/live`: voice note, Publish, buyer agent, approval link | $30.49 | eligible | EXP/2026/HT-01048, HS checked by Gemini | 201 | 3 makers | Hindi text and voice note sent |
 
-Without `GEMINI_API_KEY` the export invoice uses its built-in fallback (P0103, listing HS code, "compliance model unavailable") and the notify step shows an error. Re-run one purchase on `/app/live` once the key is set.
+Without `GEMINI_API_KEY` the export invoice uses its built-in fallback (P0103, listing HS code, "compliance model unavailable") and the notify step shows an error. With the key set, HT-01048 ran the whole `/app/live` loop: listing from the voice note in 29 s, Catalog publish, buyer agent order, approval, all five autopilot steps green.
+
+Known limit: in the built-in browser of Claude's desktop app the JS SDK button on the agent's approval card tries to open a popup, which that browser blocks for automated clicks; the approval link path was used instead. In a normal browser the popup opens.
