@@ -1,23 +1,19 @@
-# Demo video: one golden path (target 2:50, hard limit 3:00)
+# Demo video script (2:17, hard limit 3:00)
 
-Show one complete sale, live, on `/app/live`, with the stopwatch running. Everything else gets ten seconds at the end.
+One real golden path on `/app/live` (12 Nov 2026, PayPal sandbox, Gemini live), cut with motion graphics. Footage that is sped up or slowed down is labelled on screen; nothing is faked. Voice-over: Gemini TTS (an AI voice, disclosed in the AI tools statement). Sound effects are generated, no music. Photos in the opener are licensed stock (`server/seed/images/CREDITS.md`) and labelled illustrative.
 
-**Before each take**
-- Open `/app/live` and press **Reset** (top right). Keep the landing page `/` open in another tab.
-- Log out of sandbox.paypal.com so the approval popup is clean. Have the US sandbox buyer login ready.
-- Sound on: the Hindi voice note and the spoken replies are part of the story.
-- Phone pane: keep **EN on** so every Hindi message has its English line on screen. Also add subtitles in the edit for any Hindi audio.
-- Record at 1920x1080 with the browser zoomed so text is readable. If a Gemini call is slow, cut the wait in editing; never fake a result.
-
-| Time | Screen | Voice-over |
+| Time | Picture | Voice-over |
 |---|---|---|
-| 0:00 to 0:12 | Landing page hero, slow scroll | "Rafiq prints cloth by hand in Bagru, Rajasthan. Buyers abroad want it. What stops the sale isn't the cloth. It's everything around the payment." |
-| 0:12 to 0:25 | Landing page: the paperwork pile | "An English listing, an export price, a way to get paid, a GST export invoice, a purpose code, tracking, and splitting the money with the people who printed it. So we built him an export desk, run by agents and settled by PayPal." |
-| 0:25 to 0:55 | `/app/live`: press **Send Rafiq's voice note** (stopwatch starts). Transcript appears, then the listing. Tap **सुनें** for two seconds. Tap **Publish**; the Catalog row lands on the ledger | "He sends a photo and a voice note in Hindi. Gemini hears it, writes the listing in English, finds the customs code and prices it so his rupees survive PayPal's fee, GST and conversion. It answers him in Hindi, out loud. One tap, and it's live in the PayPal Catalog." |
-| 0:55 to 1:30 | Press **Ask the buyer's agent**. Tool chips, results, the approval card; `POST /v2/checkout/orders` on the ledger. Approve in the PayPal popup | "His next buyer might not be a person. This shopping agent finds the cloth and creates a real PayPal order inside the buyer's budget. But it cannot pay. Trust stays with the human, who approves in PayPal." |
-| 1:30 to 2:10 | Capture row on the ledger; five autopilot steps go green; the Hindi sale message arrives on the phone and plays as a voice note; the UPI split card; stopwatch stops; the **Where the money went** sheet rises | "The moment PayPal captures, Rafiq's desk takes over: the export invoice under LUT with purpose code P0103, India Post tracking on the PayPal capture for seller protection, and each printer's share. Then it tells Rafiq, in Hindi. And here is every dollar of that payment, traced to the three people who made the cloth." |
-| 2:10 to 2:25 | Open the export invoice; then the UPI split card | "A design decision worth saying out loud: PayPal accounts registered in India can receive from abroad but cannot send PayPal Payouts. So PayPal brings the dollars in, and UPI carries each maker's share the last mile." |
-| 2:25 to 2:40 | Ten-second montage, captioned "Also built": MCP connection details, a wholesale invoice sent by chat through the Agent Toolkit, the dispute desk | "Also built: outside AI agents can shop Haat over MCP, wholesale invoices go out through PayPal's Agent Toolkit, and a dispute desk drafts evidence from the tracking it already attached." |
-| 2:40 to 2:50 | Stopwatch close-up, then the landing page close | "From a voice note in Bagru to a paid, documented, split sale abroad, in [read the real time off the stopwatch]. Haat." |
+| 0:00 to 0:06 | Cold open, kinetic type over stock photos: "Made by hand." "Wanted abroad." | (sound only) |
+| 0:06 to 0:15 | Stock photo of a weaver (labelled illustrative), kinetic captions | Picture a block printer in Bagru, Rajasthan. Buyers abroad would love his cloth. So why does he never sell to them? |
+| 0:15 to 0:35 | Motion graphics: seven paperwork slips bury the cloth, counter 1/7 to 7/7, "Seven jobs. None of them is printing." | Because printing the cloth is the easy part. Selling abroad means an English listing. An export price that survives the fees. A way to get paid. A GST export invoice. A purpose code. Tracking. And splitting the money with everyone who made it. Seven jobs. None of them is printing. |
+| 0:35 to 0:37 | Waveform: "What if he could just talk?" | (sound only) |
+| 0:37 to 0:50 | Indigo reveal: Haat wordmark, "Running live, PayPal sandbox", the live app flies in | So we built Haat. An export desk, run by AI agents, and settled by PayPal. The maker just talks. The agents do the rest. Here it is, running live. |
+| 0:50 to 1:06 | 01 The maker speaks: real /app/live run, voice note to listing to Publish, zooms on the phone and the ledger | Rafiq, a sample maker in our demo, sends a photo and a voice note in Hindi. Gemini turns it into an English listing, finds the customs code, and prices it so his rupees survive the fees. One tap, and it's in the PayPal Catalog. |
+| 1:06 to 1:22 | 02 An agent buys: buyer agent (2x speed, labelled), then the real PayPal sandbox approval window | Now the buyer. Not a person. An AI shopping agent. It finds the cloth, and creates a real PayPal order inside the buyer's budget. But it can't pay. A human approves, inside PayPal. |
+| 1:22 to 1:38 | 03 The desk does the rest: autopilot steps, Hindi sale message, the order page with five green steps | The moment PayPal captures the payment, the desk goes to work. A GST export invoice. India Post tracking on the PayPal capture, for seller protection. Each maker's share. And a message to Rafiq, in Hindi, as text and voice. |
+| 1:38 to 1:51 | 04 Every dollar, traced: the money-flow sheet (slowed down, labelled) | Every dollar, traced. PayPal brings the money in from abroad. Indian PayPal accounts can't send payouts, so UPI carries each maker's share the last mile. |
+| 1:51 to 2:04 | 05 All of it real: ledger with debug IDs, MCP tab, export invoice | Every PayPal call lands on a live ledger, with its debug ID. Outside AI agents can shop over MCP. All of it real, on the PayPal sandbox. |
+| 2:04 to 2:17 | Stopwatch runs to the real 00:55, Haat end card with repo link | Voice note, to a paid, documented, split export sale. Fifty-five seconds. Haat. |
 
-Only show a feature in the montage if it was tested for real. The MCP endpoint is tested with the official MCP client (`server/scripts/mcp-check.ts`); show a Claude Desktop shot only if it was connected to the deployed URL.
+Real stopwatch on the run: 00:55 from voice note to makers' split.
