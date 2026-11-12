@@ -26,6 +26,7 @@ Scripted sweep in Chrome at 1440x900 and 375x812 of `/`, `/app`, `/app/live`, `/
 3. **Fixed (site).** `/CREDITS` had no icon, so the browser asked for `/favicon.ico` and got a 404. It now uses the landing page's inline icon.
 4. **Fixed (deploy).** `render.yaml` did not set `PAYOUT_MODE`, so a deployment would start in `auto` and try PayPal Payouts first. It now sets `PAYOUT_MODE=upi`.
 5. **Fixed (product).** First real purchase, 12 Nov (HT-01044): tracking failed with `400 INVALID_PARAMETER_VALUE` on `/carrier` (`IND_INDIAPOST` is not a PayPal carrier code), and the fallback to `OTHER` only fired on 422. `INDIA_POST` is accepted, so the autopilot now sends that, and the fallback also fires on a 400 that names `/carrier`. While debugging, tracking for HT-01044 was attached by hand with a probe script, so that order still shows the error in the app.
+6. **Fixed (product).** Spoken replies and sale voice notes (Gemini TTS) could begin with the prompt's English instruction read aloud ("Read this aloud in a warm, unhurried voice...") before the Hindi. Found while making the demo video, where the same prompt produced the line in 7 of 8 voice-over clips. `speak()` in `server/src/ai/gemini.ts` now sends only the words. A Hindi test sentence came back at 5 s, the length of the sentence alone.
 
 ## Real purchases (12 Nov, US sandbox buyer)
 

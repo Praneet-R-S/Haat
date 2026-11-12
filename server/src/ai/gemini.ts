@@ -216,7 +216,7 @@ function wavFromPcm(pcm: Buffer, rate: number): Buffer {
 }
 
 /** Speak a short message aloud (any Indian language). Returns WAV bytes. */
-export async function speak(text: string, style = 'a warm, unhurried voice, like a trusted relative reading a message aloud'): Promise<Buffer> {
+export async function speak(text: string, _style = 'a warm, unhurried voice, like a trusted relative reading a message aloud'): Promise<Buffer> {
   if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY is not set');
   ttsClient ??= new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY, httpOptions: { apiVersion: 'v1beta' } });
   let lastErr: any;
@@ -224,7 +224,8 @@ export async function speak(text: string, style = 'a warm, unhurried voice, like
     try {
       const r = await ttsClient.models.generateContent({
         model,
-        contents: [{ parts: [{ text: `Read this aloud in ${style}: ${text}` }] }],
+        // Send only the words: some TTS models read a style instruction out loud as part of the audio.
+        contents: [{ parts: [{ text }] }],
         config: {
           responseModalities: ['AUDIO'],
           speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Sulafat' } } },
