@@ -69,7 +69,8 @@ We would rather you trust a smaller claim than doubt a bigger one.
 | Photo + Hindi voice note to listing (Gemini), spoken replies | Real, runs live |
 | Listing published to the PayPal Catalog | Real sandbox call |
 | Buyer agent creates a PayPal order inside a mandate; human approves in PayPal | Real sandbox calls |
-| Capture, export invoice, tracking on the capture, makers' split, Hindi sale voice note | Real sandbox calls (verified on: TODO date after the first full purchase) |
+| Buyer approval in PayPal, capture, export invoice, tracking on the capture, makers' UPI split, money-flow sheet | Real sandbox calls, verified 12 Nov 2026 with a US sandbox buyer (orders HT-01045 to HT-01047) |
+| Hindi sale message and voice note to the maker after a sale | Built, runs on Gemini; not yet verified end to end |
 | Wholesale invoice through the PayPal Agent Toolkit | Real sandbox calls |
 | MCP endpoint | Tested with the official MCP client (search, details, checkout, status) |
 | Makers' split | UPI requests (Indian account); sample UPI IDs on a demo handle that cannot receive money |
@@ -82,4 +83,4 @@ We would rather you trust a smaller claim than doubt a bigger one.
 
 Try it in two minutes: open the app, go to **Live**, press **Send Rafiq's voice note**, tap **Publish** on the phone, press **Ask the buyer's agent**, approve in the PayPal popup with the sandbox buyer below, and watch the stopwatch. Full steps in the README section "Testing it (judges)".
 
-Sandbox buyer (US Personal sandbox account): TODO email / TODO password
+Sandbox buyer (US Personal sandbox account, test money only): email `sb-llyqp53881641@personal.example.com`, password `K/r0fBv?`

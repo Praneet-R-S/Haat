@@ -25,3 +25,14 @@ Scripted sweep in Chrome at 1440x900 and 375x812 of `/`, `/app`, `/app/live`, `/
 2. **Fixed (product copy).** `/app/live`, `/app/shop` product pages and the seller "Makers" tab said every maker is paid "through PayPal Payouts". With our Indian sandbox account (`PAYOUT_MODE=upi`) the shares go out as UPI requests, so the copy now names both paths. The seller agent's instructions now follow `PAYOUT_MODE`, so it no longer tells the maker that PayPal Payouts paid them.
 3. **Fixed (site).** `/CREDITS` had no icon, so the browser asked for `/favicon.ico` and got a 404. It now uses the landing page's inline icon.
 4. **Fixed (deploy).** `render.yaml` did not set `PAYOUT_MODE`, so a deployment would start in `auto` and try PayPal Payouts first. It now sets `PAYOUT_MODE=upi`.
+5. **Fixed (product).** First real purchase, 12 Nov (HT-01044): tracking failed with `400 INVALID_PARAMETER_VALUE` on `/carrier` (`IND_INDIAPOST` is not a PayPal carrier code), and the fallback to `OTHER` only fired on 422. `INDIA_POST` is accepted, so the autopilot now sends that, and the fallback also fires on a 400 that names `/carrier`. While debugging, tracking for HT-01044 was attached by hand with a probe script, so that order still shows the error in the app.
+
+## Real purchases (12 Nov, US sandbox buyer)
+
+| Order | Path | Paid | Settled | Invoice | Tracking on capture | UPI split | Hindi message |
+|---|---|---|---|---|---|---|---|
+| HT-01045 | approval link (`/checkout/return`) | $46.47 | fee $2.49, eligible | EXP/2026/HT-01045 | 201 | 4 makers, ₹2,001 | needs Gemini key |
+| HT-01046 | approval link (`/checkout/return`) | $30.19 | fee $1.75, eligible | EXP/2026/HT-01046 | 201 | 3 makers, ₹1,000 | needs Gemini key |
+| HT-01047 | JS SDK button on the product page | $47.19 | fee $2.53, eligible | EXP/2026/HT-01047 | 201 | 3 makers, ₹1,145 | needs Gemini key |
+
+Without `GEMINI_API_KEY` the export invoice uses its built-in fallback (P0103, listing HS code, "compliance model unavailable") and the notify step shows an error. Re-run one purchase on `/app/live` once the key is set.

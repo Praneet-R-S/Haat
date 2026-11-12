@@ -120,7 +120,10 @@ For frontend work: `npm run dev` (API on 8787) and `npm run dev:web` (Vite on 51
 5. Open the order to see the printable GST export invoice.
 6. In the seller chat, try: "बर्लिन की दुकान anna@example.com को 20 दुपट्टे का इनवॉइस भेज दो, 15 डॉलर एक का". The agent confirms, then sends a PayPal invoice with the Agent Toolkit.
 
-Sandbox buyer for approving payments (a US sandbox Personal account): **add its email and password here before submitting** (developer.paypal.com > Testing Tools > Sandbox Accounts).
+Sandbox buyer for approving payments (a US sandbox Personal account, test money only):
+
+- Email: `sb-llyqp53881641@personal.example.com`
+- Password: `K/r0fBv?`
 
 ### Connect an outside agent over MCP
 
