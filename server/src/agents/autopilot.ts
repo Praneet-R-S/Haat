@@ -159,7 +159,7 @@ export async function runAutopilot(orderId: string, settle: { gross?: string; fe
       paypalOrderId: order.paypal_order_id!,
       captureId: order.capture_id!,
       trackingNumber: tn,
-      carrier: 'IND_INDIAPOST',
+      carrier: 'INDIA_POST',
       carrierNameOther: 'India Post (Dak Ghar Niryat Kendra)',
       actor: 'seller-agent',
     });

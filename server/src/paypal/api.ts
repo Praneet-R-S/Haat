@@ -191,7 +191,9 @@ export async function addTracking(opts: {
   try {
     return await call(opts.carrier, opts.carrierNameOther);
   } catch (err) {
-    if (err instanceof PayPalError && err.status === 422 && opts.carrier !== 'OTHER') {
+    // PayPal answers 400 INVALID_PARAMETER_VALUE (or 422) for a carrier code it does not know: retry as OTHER with the name.
+    const carrierRejected = JSON.stringify((err as PayPalError)?.details ?? '').includes('/carrier');
+    if (err instanceof PayPalError && (err.status === 422 || (err.status === 400 && carrierRejected)) && opts.carrier !== 'OTHER') {
       return call('OTHER', opts.carrierNameOther ?? opts.carrier);
     }
     throw err;
